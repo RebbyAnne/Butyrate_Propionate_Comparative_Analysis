@@ -445,6 +445,7 @@ Negativicoccus_succinicivorans
 Selenomonas_ruminantium
 Veillonella_atypica
 Veillonella_dispar
+Veillonella_ratti
 Veillonella_rogosae
 Cetobacterium_somerae
 Coprobacillus_cateniformis
@@ -1085,7 +1086,6 @@ Brevundimonas_aurantiaca
 Brevibacterium_sanguinis
 Bradyrhizobium_neotropicale
 Bradyrhizobium_icense
-Brachybacterium_ginsengisoli
 Bacteroides_stercorirosoris
 Bacteroides_sartorii
 Bacteroides_faecichinchillae
@@ -1100,3 +1100,10 @@ Aeromonas_punctata
 Acidovorax_wautersii
 Achromobacter_spanius
 Achromobacter_insuavis
+Roseburia-inulinivorans-strain-AF28-15
+Anaerostipes_rhamnosivorans
+Selenomonas_sputigena
+Anaerotignum_propionicum
+Clostridium_propionicum
+Megasphaera_elsdenii
+Salmonella_typhimurium

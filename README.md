@@ -105,6 +105,17 @@ This step constructs profile HMMs for pathway genes and identifies butyrate- and
 cd ../hmmer_search_pipeline
 snakemake --use-conda --cores 8
 ```
+Required inputs (available in config/): 
+  - List of pathway genes for which pHMMs are constructed
+  - Amino acid reference sequences for each gene (derived from IMG genomes passing the filtering criteria)
+  - List of strains to be queried by HMMER
+
+During execution, reference genomes for the provided strains are automatically downloaded from NCBI using Entrez Direct.
+Genomes are translated to amino acid space using Prodigal, and multiple sequence alignments for each pathway gene are 
+generated using MAFFT prior to pHMM construction.
+
+HMMER hit filtering follows empirically determined score cutoffs based on model strains, with a threshold set to 
+50% of the lowest-scoring reference producer, corresponding to a clear score drop-off.
 
 Key outputs:
   - HMM profiles for each pathway gene
@@ -120,15 +131,13 @@ This step maps metagenomic reads to the pathway gene catalog and computes pathwa
 cd ../bowtie_search_pipeline
 snakemake --use-conda --cores 8
 ```
+Input Data
+Metagenomic reads are downloaded from NCBI SRA automatically using the SRA Toolkit based on accession numbers provided in the configuration. See config/ for accession numbers and manuscript data sources.
 
 Bowtie2 is run using the --very-sensitive preset in end-to-end mode.
 Outputs include:
   - Per-gene hit counts
   - Pathway-level abundance estimates
   - Normalized pathway prevalence values
-
-Input Data
-Input files (e.g., genome FASTA files, metagenomic reads) are specified within each pipeline’s Snakemake configuration and are not included in this repository due to size and licensing constraints.
-See the manuscript and Supplementary Tables for accession numbers and data sources.
 
 
